@@ -2,14 +2,15 @@
 
 namespace App;
 
+use App\Interfaces\PersonBehaviour;
 use DateTime;
 use Exception;
 
-class Person
+class Person implements PersonBehaviour, \Stringable
 {
-    public string $firstname;
-    public string $lastname;
-    public \DateTime $birth;
+    protected string $firstname;
+    protected string $lastname;
+    protected \DateTime $birth;
 
     /**
      * @param string $firstname
@@ -78,4 +79,35 @@ class Person
         return $this;
     }
 
+    /**
+     * @return void
+     */
+    public function walk(): void
+    {
+        echo "I'm currently walking";
+    }
+
+    /**
+     * @return void
+     */
+    public function eat(): void
+    {
+        echo "I'm eating a delicious meal !";
+    }
+
+    /**
+     * @return void
+     */
+    public function workout(): void
+    {
+        echo "I'm going to the gym !";
+    }
+
+    /**
+     * @return string Returns string representation of the object that
+     */
+    public function __toString(): string
+    {
+        return printf("Hi, I'm %s %s", $this->firstname, $this->lastname);
+    }
 }

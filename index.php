@@ -2,6 +2,9 @@
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-/**
- * Faire l'affichage des infos en mode ReflectionInformation::display(User::class)
- */
+use App\Reflection\ReflectionInformation;
+use App\Student;
+
+$student = new Student("John", "Doe", "1998-06-23", "UQAC", uniqid());
+
+ReflectionInformation::displayInfo($student);

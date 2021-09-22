@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface StudentBehaviour
 {
-    public function goToSchool(): void;
+    public function study(): void;
 }

@@ -2,13 +2,12 @@
 
 namespace App;
 
+use App\Interfaces\StudentBehaviour;
 use Exception;
+use Stringable;
 
-class Student extends Person
+class Student extends SchoolPerson implements StudentBehaviour, Stringable
 {
-    public string $schoolName;
-    public string $identifier;
-
     /**
      * @param string $firstname
      * @param string $lastname
@@ -19,45 +18,22 @@ class Student extends Person
      */
     public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier)
     {
-        parent::__construct($firstname, $lastname, $birth);
-        $this->schoolName = $schoolName;
-        $this->identifier = $identifier;
+        parent::__construct($firstname, $lastname, $birth, $schoolName, $identifier);
+    }
+
+    /**
+     * @return void
+     */
+    public function study(): void
+    {
+        echo "I'm studying for my maths exam";
     }
 
     /**
      * @return string
      */
-    public function getSchoolName(): string
+    public function __toString(): string
     {
-        return $this->schoolName;
+        return parent::__toString() . printf(" and I'm currently studying at the UQAC");
     }
-
-    /**
-     * @param string $schoolName
-     * @return Student
-     */
-    public function setSchoolName(string $schoolName): Student
-    {
-        $this->schoolName = $schoolName;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIdentifier(): string
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * @param string $identifier
-     * @return Student
-     */
-    public function setIdentifier(string $identifier): Student
-    {
-        $this->identifier = $identifier;
-        return $this;
-    }
-
 }

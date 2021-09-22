@@ -2,12 +2,13 @@
 
 namespace App;
 
+use App\Interfaces\TeacherBehaviour;
 use Exception;
+use Stringable;
 
-class Teacher extends Person
+class Teacher extends SchoolPerson implements TeacherBehaviour, Stringable
 {
-    public string $schoolName;
-    public string $identifier;
+    protected string $subject;
 
     /**
      * @param string $firstname
@@ -15,13 +16,48 @@ class Teacher extends Person
      * @param string $birth
      * @param string $schoolName
      * @param string $identifier
+     * @param string $subject
      * @throws Exception
      */
-    public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier)
+    public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier, string $subject)
     {
-        parent::__construct($firstname, $lastname, $birth);
-        $this->schoolName = $schoolName;
-        $this->identifier = $identifier;
+        parent::__construct($firstname, $lastname, $birth, $schoolName, $identifier);
+        $this->subject = $subject;
     }
 
+    /**
+     * @return string
+     */
+    public function getSubject(): string
+    {
+        return $this->subject;
+    }
+
+    /**
+     * @param string $subject
+     * @return Teacher
+     */
+    public function setSubject(string $subject): Teacher
+    {
+        $this->subject = $subject;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return parent::__toString() . printf(" and I'm a teacher at the UQAC");
+    }
+
+    public function prepareExam(): void
+    {
+        // TODO: Implement prepareExam() method.
+    }
+
+    public function prepareLesson(): void
+    {
+        // TODO: Implement prepareLesson() method.
+    }
 }
