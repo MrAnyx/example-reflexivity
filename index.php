@@ -7,4 +7,6 @@ use App\Student;
 
 $student = new Student("John", "Doe", "1998-06-23", "UQAC", uniqid());
 
-ReflectionInformation::displayInfo($student);
+dd((new ReflectionClass(Student::class))->getExtensionName());
+
+//ReflectionInformation::displayInfo(Student::class);

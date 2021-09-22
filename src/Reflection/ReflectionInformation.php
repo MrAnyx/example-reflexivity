@@ -12,8 +12,11 @@ class ReflectionInformation
      * @return void
      * @throws ReflectionException
      */
-    public static function displayInfo(string|object $classFullName): void {
+    public static function displayInfo(string $classFullName): void {
         $reflection = new ReflectionClass($classFullName);
-        // TODO: Ajouter la récupération des methodes, nom, ... et l'afficher
+        printf("################## Informations based on %s reflection class ##################\n", $classFullName);
+        printf("Class name : %s\n", $reflection->getName());
+        printf("From the namespace : %s\n", $reflection->getNamespaceName());
+        printf("Inheritance : %s", $reflection->getExtension());
     }
 }
