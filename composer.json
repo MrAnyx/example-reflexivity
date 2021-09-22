@@ -1,0 +1,19 @@
+{
+    "name": "mranyx/uqac-reflection",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "8.0"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.3"
+    }
+}
