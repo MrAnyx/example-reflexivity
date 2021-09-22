@@ -1,5 +1,5 @@
 {
-    "name": "mranyx/uqac-reflection",
+    "name": "robin/uqac-reflection",
     "autoload": {
         "psr-4": {
             "App\\": "src/"
