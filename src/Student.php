@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @author Robin Bidanchon
+ * @version 1.0
+ */
+
+
 namespace App;
 
 use App\Interfaces\StudentBehaviour;
@@ -16,7 +22,7 @@ class Student extends SchoolPerson implements StudentBehaviour, Stringable
      * @param string $identifier
      * @throws Exception
      */
-    public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier)
+    public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier = "N/A")
     {
         parent::__construct($firstname, $lastname, $birth, $schoolName, $identifier);
     }

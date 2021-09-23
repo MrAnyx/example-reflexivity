@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @author Robin Bidanchon
+ * @version 1.0
+ */
+
+
 namespace App;
 
 use App\Interfaces\TeacherBehaviour;
@@ -19,7 +25,7 @@ class Teacher extends SchoolPerson implements TeacherBehaviour, Stringable
      * @param string $subject
      * @throws Exception
      */
-    public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier, string $subject)
+    public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier = "N/A", string $subject)
     {
         parent::__construct($firstname, $lastname, $birth, $schoolName, $identifier);
         $this->subject = $subject;

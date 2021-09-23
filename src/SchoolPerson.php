@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @author Robin Bidanchon
+ * @version 1.0
+ */
+
+
 namespace App;
 
 use App\Interfaces\SchoolBehaviour;
@@ -7,7 +13,7 @@ use App\Interfaces\SchoolBehaviour;
 class SchoolPerson extends Person implements SchoolBehaviour
 {
     protected string $schoolName;
-    protected string $identifier;
+    protected string $identifier = "N/A";
 
     public function __construct(string $firstname, string $lastname, string $birth, string $schoolName, string $identifier)
     {

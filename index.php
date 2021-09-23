@@ -1,12 +1,15 @@
 <?php
 
+/**
+ * @author Robin Bidanchon
+ * @version 1.0
+ */
+
 require_once __DIR__ . "/vendor/autoload.php";
 
+use App\Helper\ColorConsole;
 use App\Reflection\ReflectionInformation;
 use App\Student;
 
-$student = new Student("John", "Doe", "1998-06-23", "UQAC", uniqid());
-
-//dd((new ReflectionClass(Student::class)));
-
-ReflectionInformation::displayInfo(Student::class);
+$reflectionInformation = new ReflectionInformation(Student::class);
+$reflectionInformation->displayInfo();

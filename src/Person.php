@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @author Robin Bidanchon
+ * @version 1.0
+ */
+
+
 namespace App;
 
 use App\Interfaces\PersonBehaviour;
@@ -11,6 +17,10 @@ class Person implements PersonBehaviour, \Stringable
     protected string $firstname;
     protected string $lastname;
     protected \DateTime $birth;
+
+    public const IS_ADULT = 0;
+    public const IS_TEENAGER = 1;
+    public const IS_CHILD = 2;
 
     /**
      * @param string $firstname
