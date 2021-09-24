@@ -5,7 +5,6 @@
  * @version 1.0
  */
 
-
 namespace App;
 
 use App\Interfaces\TeacherBehaviour;
@@ -59,11 +58,11 @@ class Teacher extends SchoolPerson implements TeacherBehaviour, Stringable
 
     public function prepareExam(): void
     {
-        // TODO: Implement prepareExam() method.
+        echo "I'm preparing the exam !";
     }
 
     public function prepareLesson(): void
     {
-        // TODO: Implement prepareLesson() method.
+        echo "I'm preparing the lesson !";
     }
 }

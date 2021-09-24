@@ -7,9 +7,11 @@
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-use App\Helper\ColorConsole;
 use App\Reflection\ReflectionInformation;
 use App\Student;
 
+// Création de ma classe personnalisée pour afficher les attributs, méthodes, constantes, ... d'une classe
 $reflectionInformation = new ReflectionInformation(Student::class);
+
+// On affiche les informations dans la console avec des couleurs
 $reflectionInformation->displayInfo();
