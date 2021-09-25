@@ -5,7 +5,6 @@
  * @version 1.0
  */
 
-
 namespace App;
 
 use App\Interfaces\StudentBehaviour;

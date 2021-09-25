@@ -14,6 +14,6 @@ class Foo
      */
     private function bar(): void
     {
-        echo "Initially, i was a private function";
+        echo "Initially, I was a private function";
     }
 }
